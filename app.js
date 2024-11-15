@@ -90,12 +90,27 @@
 //With Argewment**************
 
 //Register a listner
-const EventEmmiter = require('events')
-const emitter = new EventEmmiter()
+// const EventEmmiter = require('events')
+// const emitter = new EventEmmiter()
 
-// Raise a event
-emitter.on('myEvent', function(arg){
-    console.log('Bidyut Myevent is called',arg)
+// // Raise a event
+// emitter.on('myEvent', function(arg){
+//     console.log('Bidyut Myevent is called',arg)
+// })
+
+// emitter.emit('myEvent',{id: 1, name: 'Bidyut'})
+
+
+
+//to extends the eventEmitter
+const EventEmmiter = require('events')
+
+const MyLogger = require('./logger')
+const log = new MyLogger()
+
+//Register a listner
+log.on('myEvent', (arg) => {
+    console.log('eventEmitter is working now',arg)
 })
 
-emitter.emit('myEvent',{id: 1, name: 'Bidyut'})
+log.log("Message")
