@@ -1,12 +1,3 @@
-// function Hello () {
-//     console.log('Hey Myself Bidyut. Initial setup done.!')
-// }
-
-// Hello()
-
-
-
-
 //Custom module and exports that module
 // var logger = require('./logger')
 
@@ -15,7 +6,10 @@
 // console.log(logger)
 
 
-// Path Module
+
+
+
+// PATH Module
 const path = require('path')
 
 var pathObj = path.parse(__filename)
