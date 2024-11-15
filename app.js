@@ -9,7 +9,8 @@
 
 
 
-// PATH Module
+// path MODULE-----------
+
 // const path = require('path')
 
 // var pathObj = path.parse(__filename)
@@ -28,11 +29,21 @@
 
 
 
-//OS Module
-const os = require('os')
+//os MODULE-------------
 
-var TotalMemory = os.totalmem()
-var FreeMemory = os.freemem()
+// const os = require('os')
 
-console.log('TotalMemory',TotalMemory)  //TotalMemory 8589934592
-console.log('FreeMemory',FreeMemory)  //FreeMemory 61587456
+// var TotalMemory = os.totalmem()
+// var FreeMemory = os.freemem()
+
+// console.log('TotalMemory',TotalMemory)  //TotalMemory 8589934592
+// console.log('FreeMemory',FreeMemory)  //FreeMemory 61587456
+
+
+
+//fs Module-------------
+const fs = require('fs')
+
+//readdirSync behave synchronously so only one argewment it takes as path
+const files = fs.readdirSync('./')
+console.log('files',files)  // [ '.git', 'app.js', 'logger.js' ] (files that have in current directory showing here)
