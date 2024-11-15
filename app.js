@@ -74,13 +74,28 @@
 
 //events module (EventEmmiter) -----------------
 
+//Register a listner
+// const EventEmmiter = require('events')
+// const emitter = new EventEmmiter()
 
+//Raise a event
+// emitter.on('myEvent', function(){
+//     console.log('Bidyut Myevent is called')
+// })
+
+// emitter.emit('myEvent')
+
+
+
+//With Argewment**************
+
+//Register a listner
 const EventEmmiter = require('events')
 const emitter = new EventEmmiter()
 
-
-emitter.on('myEvent', function(){
-    console.log('Bidyut Myevent is called')
+// Raise a event
+emitter.on('myEvent', function(arg){
+    console.log('Bidyut Myevent is called',arg)
 })
 
-emitter.emit('myEvent')
+emitter.emit('myEvent',{id: 1, name: 'Bidyut'})
