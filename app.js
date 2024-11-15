@@ -124,7 +124,17 @@
 
 const http = require('http')
 
-const server = http.createServer()
+const server = http.createServer((req,res) => {
+    if(req.url === '/') {
+        res.write('My name is Bidyut')
+        res.end()
+    }
+
+    if(req.url === '/api/bs') {
+        res.write(JSON.stringify([1,2,3]))
+        res.end()
+    }
+})
 
 server.on('connection', (socket) => {
     console.log('New Connection....') // once you trigger this listen port no. on server its showing this log
