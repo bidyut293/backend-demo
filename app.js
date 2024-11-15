@@ -10,11 +10,11 @@
 
 
 // PATH Module
-const path = require('path')
+// const path = require('path')
 
-var pathObj = path.parse(__filename)
+// var pathObj = path.parse(__filename)
 
-console.log('pathObj',pathObj)
+// console.log('pathObj',pathObj)
 
 // output :
 // pathObj {
@@ -24,3 +24,15 @@ console.log('pathObj',pathObj)
 //     ext: '.js',
 //     name: 'app'
 //   }
+
+
+
+
+//OS Module
+const os = require('os')
+
+var TotalMemory = os.totalmem()
+var FreeMemory = os.freemem()
+
+console.log('TotalMemory',TotalMemory)  //TotalMemory 8589934592
+console.log('FreeMemory',FreeMemory)  //FreeMemory 61587456
