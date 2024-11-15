@@ -44,6 +44,25 @@
 //fs Module-------------
 const fs = require('fs')
 
+
+//SYNCHRONOUS BEHAVE***********
+
 //readdirSync behave synchronously so only one argewment it takes as path
-const files = fs.readdirSync('./')
-console.log('files',files)  // [ '.git', 'app.js', 'logger.js' ] (files that have in current directory showing here)
+// const files = fs.readdirSync('./')
+// console.log('files',files)  // [ '.git', 'app.js', 'logger.js' ] (files that have in current directory showing here)
+
+
+
+//ASYNCHRONOUS BEHAVE*************
+
+fs.readdir('$', function(err,files) {
+    if(err) console.log(err)  // err 
+    // [Error: ENOENT: no such file or directory, scandir '$'] {
+    //     errno: -2,
+    //     code: 'ENOENT',
+    //     syscall: 'scandir',
+    //     path: '$'
+    //   }
+    
+     else console.log(files)  // [ '.git', 'app.js', 'logger.js' ] (files that have in current directory showing here)
+})
