@@ -103,14 +103,33 @@
 
 
 //to extends the eventEmitter
-const EventEmmiter = require('events')
+// const EventEmmiter = require('events')
 
-const MyLogger = require('./logger')
-const log = new MyLogger()
+// const MyLogger = require('./logger')
+// const log = new MyLogger()
 
-//Register a listner
-log.on('myEvent', (arg) => {
-    console.log('eventEmitter is working now',arg)
+// //Register a listner
+// log.on('myEvent', (arg) => {
+//     console.log('eventEmitter is working now',arg)
+// })
+
+// log.log("Message")
+
+
+
+
+
+
+//http Module------------------
+
+const http = require('http')
+
+const server = http.createServer()
+
+server.on('connection', (socket) => {
+    console.log('New Connection....') // once you trigger this listen port no. on server its showing this log
 })
 
-log.log("Message")
+server.listen(3000)
+
+console.log('server listen at port 3000') //at first after this file run only this log show 
