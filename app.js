@@ -42,7 +42,9 @@
 
 
 //fs Module-------------
-const fs = require('fs')
+
+
+// const fs = require('fs')
 
 
 //SYNCHRONOUS BEHAVE***********
@@ -55,14 +57,30 @@ const fs = require('fs')
 
 //ASYNCHRONOUS BEHAVE*************
 
-fs.readdir('$', function(err,files) {
-    if(err) console.log(err)  // err 
-    // [Error: ENOENT: no such file or directory, scandir '$'] {
-    //     errno: -2,
-    //     code: 'ENOENT',
-    //     syscall: 'scandir',
-    //     path: '$'
-    //   }
-    
-     else console.log(files)  // [ '.git', 'app.js', 'logger.js' ] (files that have in current directory showing here)
+// fs.readdir('$', function(err,files) {
+//     if(err) console.log(err)  // err 
+//     // [Error: ENOENT: no such file or directory, scandir '$'] {
+//     //     errno: -2,
+//     //     code: 'ENOENT',
+//     //     syscall: 'scandir',
+//     //     path: '$'
+//     //   }
+
+//      else console.log(files)  // [ '.git', 'app.js', 'logger.js' ] (files that have in current directory showing here)
+// })
+
+
+
+
+//events module (EventEmmiter) -----------------
+
+
+const EventEmmiter = require('events')
+const emitter = new EventEmmiter()
+
+
+emitter.on('myEvent', function(){
+    console.log('Bidyut Myevent is called')
 })
+
+emitter.emit('myEvent')
